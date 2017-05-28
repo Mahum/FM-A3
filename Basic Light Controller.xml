@@ -1,9 +1,117 @@
-<?xml version="1.0" encoding="utf-8"?><!DOCTYPE nta PUBLIC '-//Uppaal Team//DTD Flat System 1.1//EN' 'http://www.it.uu.se/research/group/darts/uppaal/flat-1_1.dtd'><nta><declaration>// Place global declarations here.
-clock x;
-chan reset;</declaration><template><name x="5" y="5">L1</name><declaration>// Place local declarations here.
-</declaration><location id="id0" x="96" y="-56"><name x="80" y="-40">bright</name></location><location id="id1" x="-32" y="-56"><name x="-48" y="-40">light</name></location><location id="id2" x="-160" y="-56"><name x="-168" y="-40">off</name></location><init ref="id2"/><transition><source ref="id0"/><target ref="id2"/><label kind="guard" x="-40" y="-160">x&gt;2</label><label kind="synchronisation" x="-56" y="-128">reset?</label><nail x="96" y="-128"/><nail x="-160" y="-128"/></transition><transition><source ref="id1"/><target ref="id0"/><label kind="assignment" x="8" y="-40">x :=2</label></transition><transition><source ref="id2"/><target ref="id1"/><label kind="assignment" x="-128" y="-40">x := 1</label></transition></template><template><name x="5" y="5">P1</name><declaration>// Place local declarations here.
-</declaration><location id="id3" x="-112" y="-120"><name x="-122" y="-150">loop</name></location><init ref="id3"/><transition><source ref="id3"/><target ref="id3"/><label kind="guard" x="-40" y="-144">x &gt;=2</label><label kind="synchronisation" x="-40" y="-120">reset!</label><nail x="-48" y="-184"/><nail x="-48" y="-64"/></transition></template><system>// Place template instantiations here.
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE nta SYSTEM "http://www.it.uu.se/research/group/darts/uppaal/flat-1_1.dtd" PUBLIC "-//Uppaal Team//DTD Flat System 1.1//EN">
+
+-<nta>
+
+<declaration>// Place global declarations here. clock x; chan reset;</declaration>
 
 
-// List one or more processes to be composed into a system.
-system L1,P1;</system></nta>
+-<template>
+
+<name y="5" x="5">L1</name>
+
+<declaration>// Place local declarations here. </declaration>
+
+
+-<location y="-56" x="96" id="id0">
+
+<name y="-40" x="80">bright</name>
+
+</location>
+
+
+-<location y="-56" x="-32" id="id1">
+
+<name y="-40" x="-48">light</name>
+
+</location>
+
+
+-<location y="-56" x="-160" id="id2">
+
+<name y="-40" x="-168">off</name>
+
+</location>
+
+<init ref="id2"/>
+
+
+-<transition>
+
+<source ref="id0"/>
+
+<target ref="id2"/>
+
+<label y="-160" x="-40" kind="guard">x>2</label>
+
+<label y="-128" x="-56" kind="synchronisation">reset?</label>
+
+<nail y="-128" x="96"/>
+
+<nail y="-128" x="-160"/>
+
+</transition>
+
+
+-<transition>
+
+<source ref="id1"/>
+
+<target ref="id0"/>
+
+<label y="-40" x="8" kind="assignment">x :=2</label>
+
+</transition>
+
+
+-<transition>
+
+<source ref="id2"/>
+
+<target ref="id1"/>
+
+<label y="-40" x="-128" kind="assignment">x := 1</label>
+
+</transition>
+
+</template>
+
+
+-<template>
+
+<name y="5" x="5">P1</name>
+
+<declaration>// Place local declarations here. </declaration>
+
+
+-<location y="-120" x="-112" id="id3">
+
+<name y="-150" x="-122">loop</name>
+
+</location>
+
+<init ref="id3"/>
+
+
+-<transition>
+
+<source ref="id3"/>
+
+<target ref="id3"/>
+
+<label y="-144" x="-40" kind="guard">x >=2</label>
+
+<label y="-120" x="-40" kind="synchronisation">reset!</label>
+
+<nail y="-184" x="-48"/>
+
+<nail y="-64" x="-48"/>
+
+</transition>
+
+</template>
+
+<system>// Place template instantiations here. // List one or more processes to be composed into a system. system L1,P1;</system>
+
+</nta>
