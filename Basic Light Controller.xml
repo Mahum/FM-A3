@@ -4,7 +4,9 @@
 
 -<nta>
 
-<declaration>// Place global declarations here. clock x; chan reset;</declaration>
+<declaration>// Place global declarations here. 
+  clock x; 
+  chan reset;</declaration>
 
 
 -<template>
@@ -112,6 +114,7 @@
 
 </template>
 
-<system>// Place template instantiations here. // List one or more processes to be composed into a system. system L1,P1;</system>
+<system>// Place template instantiations here. // List one or more processes to be composed into a system. 
+  system L1,P1;</system>
 
 </nta>
